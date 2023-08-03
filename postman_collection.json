@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "7003c62a-aa14-4dab-b337-3f3acf5067ec",
+		"name": "Code&Pepper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4388210"
+	},
+	"item": [
+		{
+			"name": "Episodes",
+			"item": [
+				{
+					"name": "Get episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/episode/827b1356-ce96-4db2-a584-182479c36d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"episode",
+								"827b1356-ce96-4db2-a584-182479c36d63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get episodes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzU3YjhlNi03YjM0LTQ3NDgtOGNiZC01ZTE5MTc5OGRhYTMiLCJlbWFpbCI6InRlc3QyM0BlbWFpbC5jb20iLCJyb2xlcyI6WyJVc2VyIl0sImlhdCI6MTY4NjU3ODU3MCwiZXhwIjoxNjg2NTgyMTcwfQ.iTtbIDHhHArxrd9qXAPC0it9UwQRsCgxgPDsqjx0Hts",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/episode?skip=0&take=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"episode"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "take",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create episode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Episode name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/episode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"episode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update episode",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Episode name\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/episode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"episode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete episode",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/episode/827b1356-ce96-4db2-a584-182479c36d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"episode",
+								"827b1356-ce96-4db2-a584-182479c36d63"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Get character",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/character/827b1356-ce96-4db2-a584-182479c36d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character",
+								"827b1356-ce96-4db2-a584-182479c36d63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/character?skip=0&take=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "take",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create character",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Character name\",\n    \"planet\": \"Planet name\",\n    \"episodes\": [\"827b1356-ce96-4db2-a584-182479c36d66\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/character",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update character",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Character name\",\n    \"planet\": \"Planet name\",\n    \"episodes\": [\"827b1356-ce96-4db2-a584-182479c36d66\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/character/827b1356-ce96-4db2-a584-182479c36d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character",
+								"827b1356-ce96-4db2-a584-182479c36d63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete character",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/character/827b1356-ce96-4db2-a584-182479c36d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"character",
+								"827b1356-ce96-4db2-a584-182479c36d63"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
