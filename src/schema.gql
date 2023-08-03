@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type EpisodeGraphqlDto {
+  id: String!
+  name: String!
+}
+
+type MetadataGraphql {
+  page: Float!
+  take: Float!
+  itemCount: Float!
+  pageCount: Float!
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type PaginatedEpisodesDto {
+  data: [EpisodeGraphqlDto!]!
+  meta: MetadataGraphql!
+}
+
+type Query {
+  getEpisodes(getInput: GetEpisodesInput!): PaginatedEpisodesDto!
+  getEpisodeById(id: String!): EpisodeGraphqlDto!
+}
+
+input GetEpisodesInput {
+  page: Float! = 1
+  skip: Float!
+  take: Float!
+}
+
+type Mutation {
+  createEpisode(createInput: CreateEpisodeInput!): EpisodeGraphqlDto!
+  updateEpisode(updateInput: UpdateEpisodeInput!): Boolean!
+  deleteEpisode(id: String!): Boolean!
+}
+
+input CreateEpisodeInput {
+  name: String!
+}
+
+input UpdateEpisodeInput {
+  id: String!
+  name: String!
+}

@@ -11,7 +11,10 @@ async function bootstrap() {
 
   const logger: LoggerService = app.get(WINSTON_MODULE_NEST_PROVIDER);
 
-  app.use(helmet());
+  app.use(
+    helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }),
+  );
+
   app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
   app.enableShutdownHooks();
   app.enableVersioning({ type: VersioningType.URI });

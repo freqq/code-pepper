@@ -39,7 +39,7 @@ describe('UpdateEpisodeHandler', () => {
       existsMock.mockReturnValueOnce(true);
 
       // Act
-      await handler.execute({
+      const result = await handler.execute({
         id: ID,
         updateDto: episodeEntity,
       });
@@ -48,6 +48,7 @@ describe('UpdateEpisodeHandler', () => {
       expect(existsMock).toHaveBeenCalledTimes(1);
       expect(updateMock).toHaveBeenCalledTimes(1);
       expect(updateMock).toHaveBeenCalledWith(ID, episodeEntity);
+      expect(result).toEqual(true);
     });
 
     test('should execute the command and throw an exception if episode does not exist', async () => {

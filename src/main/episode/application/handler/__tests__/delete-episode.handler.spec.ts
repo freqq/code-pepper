@@ -43,7 +43,7 @@ describe('DeleteEpisodeHandler', () => {
       existsMock.mockReturnValueOnce(true);
 
       // Act
-      await handler.execute({ id });
+      const result = await handler.execute({ id });
 
       // Assert
       expect(existsMock).toHaveBeenCalledTimes(1);
@@ -51,6 +51,8 @@ describe('DeleteEpisodeHandler', () => {
 
       expect(deleteByIdMock).toHaveBeenCalledTimes(1);
       expect(deleteByIdMock).toHaveBeenCalledWith(id);
+
+      expect(result).toEqual(true);
     });
 
     test('should execute the command and throw an exception if episode does not exist', async () => {

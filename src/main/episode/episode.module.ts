@@ -6,10 +6,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EpisodeEntity } from './infrastructure/episode.entity';
 import { CqrsModule } from '@nestjs/cqrs';
 import { EpisodeMapper } from './domain/episode.mapper';
+import { EpisodeResolver } from './interface/episode.resolver';
 
 @Module({
   imports: [TypeOrmModule.forFeature([EpisodeEntity]), CqrsModule],
   controllers: [EpisodeController],
-  providers: [...Handlers, EpisodeRepository, EpisodeMapper],
+  providers: [...Handlers, EpisodeRepository, EpisodeMapper, EpisodeResolver],
 })
 export class EpisodeModule {}

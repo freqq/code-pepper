@@ -20,5 +20,7 @@ export class DeleteEpisodeHandler implements ICommandHandler {
 
     await this.repository.deleteById(id);
     this.logger.log(`Deleted episode with id [${id}]`);
+
+    return true;
   }
 }

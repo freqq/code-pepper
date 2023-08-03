@@ -14,6 +14,8 @@ export class UpdateEpisodeHandler implements ICommandHandler {
       throw new EpisodeNotFound(id);
     }
 
-    return await this.repository.update(id, updateDto);
+    await this.repository.update(id, updateDto);
+
+    return true;
   }
 }

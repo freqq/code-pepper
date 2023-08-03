@@ -4,6 +4,8 @@
 
 - Node.js framework - NestJS + Typescript
 - Used Rest API communication interface
+- Added simple episode resolver as an example of GraphQL interface implementation - code first approach
+- Apollo playground on http://localhost:3000/graphql
 - Used TDD and integrations tests for testing and development purposes
 - Fully functional rest API documentation - Open API - available at http://localhost:3000/api-docs#/
 - Database modeling - TypeORM (other possible alternatives are e.g. Prisma or Knex.js)
@@ -20,9 +22,15 @@
 - Extract repository interfaces to make them database technology agnostic
 - Use full blown CQRS + DDD instead of small prototype (events, aggregates etc)
 - Add E2E tests
-- Add GraphQL - should be quite simple to do, since all of the business logic is extracted into handlers
+- Add character GraphQL resolver - should be quite simple to do, since all of the business logic is extracted into handlers
 - Add ElastiCache to CloudFormation template
 - Create external repo with infra code - consider using Terraform HCL or Typescript CDK
+
+## Running unit tests
+
+```
+yarn test:cov
+```
 
 ## How to run locally
 
